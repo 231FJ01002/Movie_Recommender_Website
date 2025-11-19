@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Recommended Movies</title>
+<style>
+body { font-family: Arial; background: #101820; color: white; text-align: center; }
+ul { list-style-type: none; padding: 0; }
+li { background: #1b2430; padding: 10px; margin: 10px auto; width: 40%; 
+     border-radius: 8px; font-size: 18px; }
+a { color: #00e6e6; text-decoration: none; font-size: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Recommendations for {{ movie }}</h1>
+
+{% if results is not none %}
+<ul>
+{% for r in results %}
+    <li>{{ r }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<h2>No movie found</h2>
+{% endif %}
+
+<br>
+<a href="/">&#8592; Back</a>
+
+</body>
+</html>
